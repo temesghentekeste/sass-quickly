@@ -60,7 +60,7 @@ section h1 {
 
 .main-banner {
        @include banner();
-       background: linear-gradient(rgba($color-black, 0.6), rgba($color-tertiary, 0.7)), url(../img/banner.jpg) no-repeat center center /cover;
+       background: linear-gradient(rgba($color-black, 0.8), rgba($color-black, 0.7)), url(../img/banner.jpg) no-repeat center center /cover;
        background-position-y: bottom;
 
        h2{
@@ -110,6 +110,9 @@ footer {
         color: $color-white;
     }
 }
+
+
+
 
 
 

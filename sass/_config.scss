@@ -11,7 +11,7 @@
 }
 
 
-@each $bp-modifier, $breakpoint in $grid-breakpoints {
+@each $bp-modifier, $breakpoint in $grid-breakpoints-map {
   @include configure-col-classes($bp-modifier, $grid-cols, $breakpoint);
 }
 

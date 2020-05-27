@@ -1,0 +1,22 @@
+$base-font: 'Helvetica Neue', Arial, sans-serif;
+$color-primary: #032f3e;;
+$color-secondary: #888;
+$color-tertiary: #383838;
+$color-white: #fff;
+$color-black: #000;
+$max-width: 1200px;
+
+
+$section-title: 2.5rem;
+$gutter:20px;
+$numberOfNavLinks: 7 ;
+$grid-bp-md: 768px;
+$grid-bp-lg: 992px;
+$grid-bp-xl: 1200px;
+$grid-cols:12;
+
+$grid-breakpoints-map: (
+  md: $grid-bp-md,
+  lg: $grid-bp-lg,
+  xl: $grid-bp-xl
+);
