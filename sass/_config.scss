@@ -1,0 +1,77 @@
+
+
+@for $i from 1 through $grid-cols{
+    .col-#{$i}{
+        flex-basis: 100 / ($grid-cols/$i)*1%;
+    }
+    .col-offset-#{$i}{
+      margin-left:100*$i / ($grid-cols)*1% ;
+  }
+
+}
+
+
+@each $bp-modifier, $breakpoint in $grid-breakpoints {
+  @include configure-col-classes($bp-modifier, $grid-cols, $breakpoint);
+}
+
+
+$space-amounts: (1, 2, 3, 4, 5);
+
+@each $space in $space-amounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+  .mx-#{$space} {
+    margin: 0 #{$space}rem;
+  }
+  .mt-#{$space} {
+    margin-top: #{$space}rem;
+  }
+  .mb-#{$space} {
+    margin-bottom: #{$space}rem;
+  }
+  .ml-#{$space} {
+    margin-left: #{$space}rem;
+  }
+  .mr-#{$space} {
+    margin-right: #{$space}rem;
+  }
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+  .px-#{$space} {
+    padding: 0 #{$space}rem;
+  }
+  .pt-#{$space} {
+    padding-top: #{$space}rem;
+  }
+  .pb-#{$space} {
+    padding-bottom: #{$space}rem;
+  }
+  .pl-#{$space} {
+    padding-left: #{$space}rem;
+  }
+  .pr-#{$space} {
+    padding-right: #{$space}rem;
+  }
+}
+
+$weights: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+
+@each $weight in $weights {
+  .font-weight-#{$weight} {
+    font-weight: #{$weight};
+  }
+}
+
+
+
+
+

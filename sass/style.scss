@@ -1,0 +1,115 @@
+@import 'variables';
+@import 'mixins';
+@import 'config';
+@import 'utilities';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+li { list-style: none; }
+
+.container{
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+
+}
+
+body {
+    font-family: $base-font;
+}
+
+section h1 {
+    font-size: $section-title;
+}
+
+.main-nav {
+    background: $color-primary;
+    ul {
+        width: 100%;
+        @include d-flex(column);
+        @include mQ(600px){
+            flex-direction: row;
+        }
+    }
+
+    li{
+        flex: 1 1 (100%/$numberOfNavLinks);
+
+        a{
+            color: $color-white;
+            text-decoration: none;
+            padding: 16px;
+            text-align: center;
+            display: block;
+            white-space: nowrap;
+
+            &:hover {
+                background:lighten($color-primary, 5%);
+            }
+        }
+    }
+
+}
+
+.main-banner {
+       @include banner();
+       background: linear-gradient(rgba($color-black, 0.6), rgba($color-tertiary, 0.7)), url(../img/banner.jpg) no-repeat center center /cover;
+       background-position-y: bottom;
+
+       h2{
+           font-size: 3rem;
+       }
+       
+       @include mQ(768px){
+        h2 {
+            font-size: 2rem;
+        }
+    }
+
+       p {
+           font-size: 1.2rem;
+       }
+}
+
+
+.pricing-banner {
+       @include banner();
+       background: linear-gradient(rgba($color-black, 0.8), rgba($color-secondary, 0.3)), url(../img/banner.jpg) no-repeat center center/cover;
+       background-position-y: bottom;
+       h2{
+           font-size: 3rem;
+       }
+
+       p {
+           font-size: 1.2rem;
+       }
+    li{
+        text-transform: uppercase;
+        font-size: 20px;
+        max-width: 500px;
+        margin: 60px 0;
+    }
+}
+
+footer {
+    margin-top: -2rem;
+    @include background(){
+    background: #333;
+    padding: 3rem 0;
+    }
+
+    p{
+        text-align: center;
+        color: $color-white;
+    }
+}
+
+
+

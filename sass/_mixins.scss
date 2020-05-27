@@ -1,0 +1,64 @@
+@mixin d-flex($flex-direction){
+    display:flex;
+    flex-direction: $flex-direction;
+}
+
+@mixin banner(){
+        width: 100%;
+        height: 400px;
+        @include d-flex(column);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        color: $color-white;
+      
+        h2,
+        p {
+          margin-bottom: 10px;
+
+        }
+        .btn {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          padding: 10px 16px;
+          background: $color-secondary;
+          transition: all ;
+          &:hover{
+              background: darken($color-secondary, 20%);
+          }
+        }
+
+        a {
+            color: $color-white;
+            text-decoration: none;
+        }
+
+}
+
+@mixin background(){
+    @content;
+}
+
+@mixin mQ($grid-bp){
+    @media screen and (min-width: $grid-bp){
+        @content;
+    }
+}
+
+@mixin configure-col-classes($modifier, $grid-cols, $breakpoint) {
+    @include mQ($breakpoint) {
+      @for $i from 1 through $grid-cols {
+        .col-#{$modifier}-#{$i} {
+          flex-basis: (100 / ($grid-cols / $i) ) * 1%;
+        }
+        .col-#{$modifier}-offset-#{$i} {
+          margin-left: (100 / ($grid-cols / $i) ) * 1%;
+        }
+      }
+    }
+  }
+
+
+

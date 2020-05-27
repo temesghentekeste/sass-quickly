@@ -1,0 +1,20 @@
+.container {
+    max-width: $max-width;
+    margin: 0 auto;
+
+    &-fluid{
+        margin: 0;
+        max-width: 100%;
+    }
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .row{
+      @include d-flex(row);
+      flex-wrap: wrap;
+      width: 100%;
+  }
+
